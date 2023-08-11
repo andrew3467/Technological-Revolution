@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "techrevo:block/test_block"
+    }
+  },
+
+}
