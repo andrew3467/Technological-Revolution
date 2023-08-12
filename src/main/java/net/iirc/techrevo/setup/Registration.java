@@ -26,7 +26,12 @@ public class Registration {
 
 
     public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("test_block", () -> new Block(BLOCK_PROPERTIES));
+    public static final RegistryObject<Block> TEST_ORE = BLOCKS.register("test_ore", () -> new Block(BLOCK_PROPERTIES));
+
+
+
     public static RegistryObject<Item> TEST_BLOCK_ITEM = fromBlock(TEST_BLOCK);
+    public static RegistryObject<Item> TEST_ORE_ITEM = fromBlock(TEST_ORE);
 
     public static final RegistryObject<Block> KANYE_BLOCK = BLOCKS.register("kanye_block", () -> new Block(BLOCK_PROPERTIES));
     public static RegistryObject<Item> KANYE_BLOCK_ITEM = fromBlock(KANYE_BLOCK);
@@ -37,6 +42,10 @@ public class Registration {
 
         BLOCKS.register(bus);
         ITEMS.register(bus);
+
+    }
+
+    private static void createBlockItems(){
 
     }
 

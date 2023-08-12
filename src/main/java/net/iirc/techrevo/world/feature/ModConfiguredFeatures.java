@@ -1,4 +1,5 @@
 package net.iirc.techrevo.world.feature;
+
 import static net.iirc.techrevo.TechnologicalRevolution.MODID;
 import static net.iirc.techrevo.setup.Registration.KANYE_BLOCK;
 
@@ -8,6 +9,7 @@ import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,9 +23,12 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, MODID);
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>>  OVERWORLD_KANYE_BLOCK = Suppliers.memoize(() -> List.of(
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_KANYE_BLOCK = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, KANYE_BLOCK.get().defaultBlockState())));
 
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> KANYE_ORE = CONFIGURED_FEATURES.register("kanye_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_KANYE_BLOCK.get(), 28)));
 
 
     public static void register(IEventBus eventBus) {

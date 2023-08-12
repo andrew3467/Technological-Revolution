@@ -17,7 +17,7 @@ public class ModPlacedFeatures {
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, MODID);
 
     public static final RegistryObject<PlacedFeature> KANYE_BLOCK_PLACED = PLACED_FEATURES.register("kanye_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.OVERWORLD_KANYE_BLOCK.getHolder().get(),
+            () -> new PlacedFeature(ModConfiguredFeatures.KANYE_ORE.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
