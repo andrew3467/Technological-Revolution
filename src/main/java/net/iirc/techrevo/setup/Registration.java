@@ -1,5 +1,7 @@
 package net.iirc.techrevo.setup;
 
+import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
+import net.iirc.techrevo.world.feature.ModPlacedFeatures;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -26,12 +28,16 @@ public class Registration {
     public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("test_block", () -> new Block(BLOCK_PROPERTIES));
     public static RegistryObject<Item> TEST_BLOCK_ITEM = fromBlock(TEST_BLOCK);
 
+    public static final RegistryObject<Block> KANYE_BLOCK = BLOCKS.register("kanye_block", () -> new Block(BLOCK_PROPERTIES));
+    public static RegistryObject<Item> KANYE_BLOCK_ITEM = fromBlock(KANYE_BLOCK);
+
 
     public static void init(){
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         BLOCKS.register(bus);
         ITEMS.register(bus);
+
     }
 
     public static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block){
