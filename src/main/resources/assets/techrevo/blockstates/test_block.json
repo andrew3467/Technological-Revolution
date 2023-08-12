@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": {
+      "model": "techrevo:block/test_block"
+    }
+  },
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "techrevo:block/test_block"
+  }
+}

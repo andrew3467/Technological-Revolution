@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "techrevo:block/kanye_block"
+    "all": "techrevo:blocks/kanye_block"
   }
 }

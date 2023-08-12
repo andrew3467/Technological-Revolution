@@ -1,8 +1,6 @@
 package net.iirc.techrevo;
 
 import com.mojang.logging.LogUtils;
-import net.iirc.techrevo.block.ModBlocks;
-import net.iirc.techrevo.item.ModItems;
 import net.iirc.techrevo.setup.ModSetup;
 import net.iirc.techrevo.setup.Registration;
 import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
