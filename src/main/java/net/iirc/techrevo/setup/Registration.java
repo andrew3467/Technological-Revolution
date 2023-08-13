@@ -1,5 +1,6 @@
 package net.iirc.techrevo.setup;
 
+import net.iirc.techrevo.blocks.CopperCable;
 import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
 import net.iirc.techrevo.world.feature.ModPlacedFeatures;
 import net.minecraft.world.item.BlockItem;
@@ -27,6 +28,7 @@ public class Registration {
 
     public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("test_block", () -> new Block(BLOCK_PROPERTIES));
     public static final RegistryObject<Block> TEST_ORE = BLOCKS.register("test_ore", () -> new Block(BLOCK_PROPERTIES));
+    public static final RegistryObject<Block> COPPER_CABLE = BLOCKS.register("copper_cable", () -> new CopperCable(BLOCK_PROPERTIES));
 
 
 
@@ -35,6 +37,7 @@ public class Registration {
 
     public static final RegistryObject<Block> KANYE_BLOCK = BLOCKS.register("kanye_block", () -> new Block(BLOCK_PROPERTIES));
     public static RegistryObject<Item> KANYE_BLOCK_ITEM = fromBlock(KANYE_BLOCK);
+    public static RegistryObject<Item> COPPER_CABLE_ITEM = fromBlock(COPPER_CABLE);
 
 
     public static void init(){

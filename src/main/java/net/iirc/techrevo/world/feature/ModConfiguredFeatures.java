@@ -24,7 +24,8 @@ public class ModConfiguredFeatures {
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, MODID);
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_KANYE_BLOCK = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, KANYE_BLOCK.get().defaultBlockState())));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, KANYE_BLOCK.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, KANYE_BLOCK.get().defaultBlockState())));
 
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> KANYE_ORE = CONFIGURED_FEATURES.register("kanye_ore",

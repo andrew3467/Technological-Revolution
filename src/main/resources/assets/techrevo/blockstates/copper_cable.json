@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": {
+      "model": "techrevo:block/copper_cable"
+    }
+  },
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "techrevo:block/copper_cable"
+  }
+}
