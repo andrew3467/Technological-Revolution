@@ -1,8 +1,7 @@
 {
   "itemGroup.techrevo": "Technological Revolution",
-
-  "block.techrevo.kanye_block": "Kanye Block",
   "block.techrevo.test_block": "Test Block",
   "block.techrevo.test_ore": "Test Ore",
-  "block.techrevo.copper_cable": "Copper Cable"
+  "block.techrevo.copper_cable": "Copper Cable",
+  "block.techrevo.test_ore_block": "Test Ore Block"
 }

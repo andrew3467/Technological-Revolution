@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "techrevo:block/test_ore_block" }
+  }
+}

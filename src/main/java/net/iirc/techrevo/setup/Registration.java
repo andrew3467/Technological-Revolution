@@ -35,8 +35,8 @@ public class Registration {
     public static RegistryObject<Item> TEST_BLOCK_ITEM = fromBlock(TEST_BLOCK);
     public static RegistryObject<Item> TEST_ORE_ITEM = fromBlock(TEST_ORE);
 
-    public static final RegistryObject<Block> KANYE_BLOCK = BLOCKS.register("kanye_block", () -> new Block(BLOCK_PROPERTIES));
-    public static RegistryObject<Item> KANYE_BLOCK_ITEM = fromBlock(KANYE_BLOCK);
+    public static final RegistryObject<Block> TEST_ORE_BLOCK = BLOCKS.register("test_ore_block", () -> new Block(BLOCK_PROPERTIES));
+    public static RegistryObject<Item> KANYE_BLOCK_ITEM = fromBlock(TEST_ORE_BLOCK);
     public static RegistryObject<Item> COPPER_CABLE_ITEM = fromBlock(COPPER_CABLE);
 
 
