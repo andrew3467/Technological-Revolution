@@ -38,9 +38,8 @@ public class Registration {
     private static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MODID);
 
 
-    public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("test_block", () -> new Block(BLOCK_PROPERTIES));
-    public static final RegistryObject<Block> TEST_ORE = BLOCKS.register("test_ore", () -> new Block(BLOCK_PROPERTIES));
-    public static final RegistryObject<Block> TEST_ORE_BLOCK = BLOCKS.register("test_ore_block", () -> new Block(BLOCK_PROPERTIES));
+
+
     public static final RegistryObject<Block> IRON_FURNACE = BLOCKS.register("iron_furnace", () -> new IronFurnace(BLOCK_PROPERTIES));
 
 //  Official ores

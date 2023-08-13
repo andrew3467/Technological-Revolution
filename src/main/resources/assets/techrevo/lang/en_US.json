@@ -1,9 +1,6 @@
 {
   "itemGroup.techrevo": "Technological Revolution",
 
-  "block.techrevo.test_block": "Test Block",
-  "block.techrevo.test_ore": "Test Ore",
-  "block.techrevo.test_ore_block": "Test Ore Block",
   "block.techrevo.iron_furnace": "Iron Furnace",
   "block.techrevo.bauxite_ore": "Bauxite Ore",
   "block.techrevo.chalcopyrite_ore": "Chalcopyrite Ore",
