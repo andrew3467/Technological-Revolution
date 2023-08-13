@@ -29,7 +29,7 @@ public class ModConfiguredFeatures {
 
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> KANYE_ORE = CONFIGURED_FEATURES.register("kanye_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_KANYE_BLOCK.get(), 28)));
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_KANYE_BLOCK.get(), 9)));
 
 
     public static void register(IEventBus eventBus) {
