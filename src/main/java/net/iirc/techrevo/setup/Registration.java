@@ -3,6 +3,7 @@ package net.iirc.techrevo.setup;
 import net.iirc.techrevo.blocks.CopperCable;
 import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
 import net.iirc.techrevo.world.feature.ModPlacedFeatures;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -24,6 +25,7 @@ public class Registration {
 
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    private static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MODID);
 
 
     public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("test_block", () -> new Block(BLOCK_PROPERTIES));
@@ -81,6 +83,11 @@ public class Registration {
     public static final RegistryObject<Block> TEST_ORE_BLOCK = BLOCKS.register("test_ore_block", () -> new Block(BLOCK_PROPERTIES));
     public static RegistryObject<Item> KANYE_BLOCK_ITEM = fromBlock(TEST_ORE_BLOCK);
     public static RegistryObject<Item> COPPER_CABLE_ITEM = fromBlock(COPPER_CABLE);
+
+
+
+    //GUI
+    public static final RegistryObject<MenuType<IronFurnaceMenu>IRON_FURNACE_MENU = MENUS.
 
 
     public static void init(){
