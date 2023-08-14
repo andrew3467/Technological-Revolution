@@ -55,14 +55,24 @@ public class Registration {
 
 
 
+<<<<<<< Updated upstream
     public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace", () ->
             BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
+=======
+//    public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace_tile", () ->
+//            BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
 
-    //GUI
+>>>>>>> Stashed changes
+
 
 //    public static final RegistryObject<MenuType<IronFurnaceMenu>IRON_FURNACE_MENU = MENUS.
+<<<<<<< Updated upstream
 
     //public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace");
+=======
+//
+//    public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace_menu");
+>>>>>>> Stashed changes
 
 
 

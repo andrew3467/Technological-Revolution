@@ -42,6 +42,9 @@ public class ModConfiguredFeatures {
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PYRITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PYRITE_ORE.get().defaultBlockState())));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_SPHALERITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, SPHALERITE_ORE.get().defaultBlockState())));
+
 
 
 
@@ -66,6 +69,10 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> PYRITE_ORE_PLACED = CONFIGURED_FEATURES.register("pyrite_ore_placed",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_PYRITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> SPHALERITE_ORE_PLACED = CONFIGURED_FEATURES.register("sphalerite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SPHALERITE_ORE.get(), 9)));
+
 
 
 
