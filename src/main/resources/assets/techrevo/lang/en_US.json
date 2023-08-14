@@ -1,15 +1,13 @@
 {
   "itemGroup.techrevo": "Technological Revolution",
-  "block.techrevo.test_block": "Test Block",
-  "block.techrevo.test_ore": "Test Ore",
-  "block.techrevo.copper_cable": "Copper Cable",
-  "block.techrevo.test_ore_block": "Test Ore Block",
+
+  "block.techrevo.iron_furnace": "Iron Furnace",
   "block.techrevo.bauxite_ore": "Bauxite Ore",
   "block.techrevo.chalcopyrite_ore": "Chalcopyrite Ore",
   "block.techrevo.flourite_ore": "Flourite Ore",
   "block.techrevo.hematite_ore": "Hematite Ore",
   "block.techrevo.magnetite_ore": "Magnetite Ore",
-  "block.techrevo.malechite_ore": "Malechite Ore",
+  "block.techrevo.malachite_ore": "Malachite Ore",
   "block.techrevo.pyrite_ore": "Pyrite Ore",
   "block.techrevo.sphalerite_ore": "Sphalerite Ore"
 }

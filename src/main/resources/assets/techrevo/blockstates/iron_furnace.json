@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "techrevo:block/iron_furnace",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "techrevo:block/iron_furnace"
+    },
+    "facing=south": {
+      "model": "techrevo:block/iron_furnace",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "techrevo:block/iron_furnace",
+      "y": 270
+    }
+  },
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "techrevo:block/iron_furnace"
+  }
+}

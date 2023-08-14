@@ -23,6 +23,7 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, MODID);
 
+
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_BAUXITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BAUXITE_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_CHALCOPYRITE_ORE = Suppliers.memoize(() -> List.of(
@@ -37,7 +38,7 @@ public class ModConfiguredFeatures {
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_MAGNETITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MAGNETITE_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_MALECHITE_ORE = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MALECHITE_ORE.get().defaultBlockState())));
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MALACHITE_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PYRITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PYRITE_ORE.get().defaultBlockState())));
 
@@ -49,7 +50,7 @@ public class ModConfiguredFeatures {
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CHALCOPYRITE_ORE_PLACED = CONFIGURED_FEATURES.register("chalcopyrite_ore_placed",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(CHALCOPYRITE_ORE.get(), 9)));
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_CHALCOPYRITE_ORE.get(), 9)));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> FLOURITE_ORE_PLACED = CONFIGURED_FEATURES.register("flourite_ore_placed",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_FLOURITE_ORE.get(), 9)));
@@ -57,14 +58,15 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> HEMATITE_ORE_PLACED = CONFIGURED_FEATURES.register("hematite_ore_placed",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("magnetite_ore_placed",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAGNETITE_ORE_PLACED = CONFIGURED_FEATURES.register("magnetite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_MAGNETITE_ORE.get(), 9)));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("malechite_ore_placed",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MALACHITE_ORE_PLACED = CONFIGURED_FEATURES.register("malachite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_MALECHITE_ORE.get(), 9)));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("pyrite_ore_placed",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PYRITE_ORE_PLACED = CONFIGURED_FEATURES.register("pyrite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_PYRITE_ORE.get(), 9)));
+
 
 
 
