@@ -23,6 +23,9 @@ import net.minecraft.world.level.gameevent.GameEventListener;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+
+import static net.iirc.techrevo.setup.Registration.IRON_FURNACE_TILE;
+
 public class IronFurnace extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
@@ -47,12 +50,21 @@ public class IronFurnace extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return null;
+        return IRON_FURNACE_TILE.get().create(pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return EntityBlock.super.getTicker(pLevel, pState, pBlockEntityType);
+        return pLevel.isClientSide() ? null : ($0, $1, $2, blockEntity) -> {
+            if(blockEntity instanceof IronFurnaceTile ironFurnace){
+                ironFurnace.tick();
+            }
+        };
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 }

@@ -1,7 +1,5 @@
 package net.iirc.techrevo.setup;
 
-
-
 import net.iirc.techrevo.blocks.IronFurnaceTile;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 
@@ -10,7 +8,6 @@ import net.iirc.techrevo.blocks.IronFurnace;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
@@ -58,14 +55,14 @@ public class Registration {
 
 
 
-    //public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace_tile", () ->
-    //        BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace", () ->
+            BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
 
     //GUI
 
 //    public static final RegistryObject<MenuType<IronFurnaceMenu>IRON_FURNACE_MENU = MENUS.
 
-    //public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace_menu");
+    //public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace");
 
 
 
