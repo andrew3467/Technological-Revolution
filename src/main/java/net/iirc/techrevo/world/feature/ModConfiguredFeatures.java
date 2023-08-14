@@ -1,7 +1,7 @@
 package net.iirc.techrevo.world.feature;
 
 import static net.iirc.techrevo.TechnologicalRevolution.MODID;
-import static net.iirc.techrevo.setup.Registration.TEST_BLOCK;
+import static net.iirc.techrevo.setup.Registration.*;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
@@ -23,13 +23,50 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, MODID);
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_TEST_BLOCK = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, TEST_BLOCK.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, TEST_BLOCK.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_BAUXITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BAUXITE_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_CHALCOPYRITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, CHALCOPYRITE_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_FLOURITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, FLOURITE_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_HEMATITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, HEMATITE_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_MAGNETITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MAGNETITE_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_MALECHITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MALECHITE_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PYRITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PYRITE_ORE.get().defaultBlockState())));
 
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> KANYE_ORE = CONFIGURED_FEATURES.register("kanye_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_TEST_BLOCK.get(), 9)));
+
+
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("bauxite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CHALCOPYRITE_ORE_PLACED = CONFIGURED_FEATURES.register("chalcopyrite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(CHALCOPYRITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> FLOURITE_ORE_PLACED = CONFIGURED_FEATURES.register("flourite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_FLOURITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HEMATITE_ORE_PLACED = CONFIGURED_FEATURES.register("hematite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("magnetite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("malechite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> BAUXITE_ORE_PLACED = CONFIGURED_FEATURES.register("pyrite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_BAUXITE_ORE.get(), 9)));
+
+
 
 
     public static void register(IEventBus eventBus) {

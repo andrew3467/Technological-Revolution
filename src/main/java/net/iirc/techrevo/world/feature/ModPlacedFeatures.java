@@ -16,8 +16,8 @@ public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, MODID);
 
-    public static final RegistryObject<PlacedFeature> TEST_BLOCK_PLACED = PLACED_FEATURES.register("test_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.KANYE_ORE.getHolder().get(),
+    public static final RegistryObject<PlacedFeature> BAUXITE_ORE_PLACED = PLACED_FEATURES.register("bauxite_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.BAUXITE_ORE_PLACED.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 

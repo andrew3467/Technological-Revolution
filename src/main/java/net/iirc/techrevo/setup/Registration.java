@@ -1,13 +1,9 @@
 package net.iirc.techrevo.setup;
 
-import net.iirc.techrevo.blocks.CopperCable;
-import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
-import net.iirc.techrevo.world.feature.ModPlacedFeatures;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -87,7 +83,7 @@ public class Registration {
 
 
     //GUI
-    public static final RegistryObject<MenuType<IronFurnaceMenu>IRON_FURNACE_MENU = MENUS.
+//    public static final RegistryObject<MenuType<IronFurnaceMenu>IRON_FURNACE_MENU = MENUS.
 
 
     public static void init(){
