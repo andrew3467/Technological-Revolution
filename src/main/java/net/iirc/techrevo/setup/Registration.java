@@ -1,16 +1,11 @@
 package net.iirc.techrevo.setup;
-import net.iirc.techrevo.screen.IronFurnaceMenu;
-import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
-import net.iirc.techrevo.world.feature.ModPlacedFeatures;
-import net.minecraft.core.Registry;
+import net.iirc.techrevo.blocks.IronFurnaceTile;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.iirc.techrevo.blocks.IronFurnace;
-import net.iirc.techrevo.blocks.IronFurnaceTile;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -49,18 +44,18 @@ public class Registration {
     public static final RegistryObject<Block> PYRITE_ORE = BLOCKS.register("pyrite_ore", () -> new Block(BLOCK_PROPERTIES));
     public static final RegistryObject<Block> MAGNETITE_ORE  = BLOCKS.register("magnetite_ore", () -> new Block(BLOCK_PROPERTIES));
     public static final RegistryObject<Block>  CHALCOPYRITE_ORE = BLOCKS.register("chalcopyrite_ore", () -> new Block(BLOCK_PROPERTIES));
-    public static final RegistryObject<Block> MALECHITE_ORE = BLOCKS.register("malechite_ore", () -> new Block(BLOCK_PROPERTIES));
+    public static final RegistryObject<Block> MALACHITE_ORE = BLOCKS.register("malachite_ore", () -> new Block(BLOCK_PROPERTIES));
     public static final RegistryObject<Block> SPHALERITE_ORE = BLOCKS.register("sphalerite_ore", () -> new Block(BLOCK_PROPERTIES));
     public static final RegistryObject<Block> FLOURITE_ORE = BLOCKS.register("flourite_ore", () -> new Block(BLOCK_PROPERTIES));
 
 
 
 
-    public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace_tile", () ->
-            BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
+    //public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace_tile", () ->
+    //        BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
 
     //GUI
-    public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace_menu");
+    //public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace_menu");
 
 
     public static void init(){
