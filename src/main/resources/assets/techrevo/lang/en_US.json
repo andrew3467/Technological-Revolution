@@ -9,5 +9,10 @@
   "block.techrevo.magnetite_ore": "Magnetite Ore",
   "block.techrevo.malachite_ore": "Malachite Ore",
   "block.techrevo.pyrite_ore": "Pyrite Ore",
-  "block.techrevo.sphalerite_ore": "Sphalerite Ore"
+  "block.techrevo.sphalerite_ore": "Sphalerite Ore",
+  "block.techrevo.wolframite_ore": "Wolframite Ore",
+
+  "item.techrevo.wolframite_ingot": "Wolframite Ingot",
+
+  "container.techrevo.iron_furnace": "Iron Furnace"
 }

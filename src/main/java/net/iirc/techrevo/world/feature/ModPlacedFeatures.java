@@ -55,7 +55,12 @@ public class ModPlacedFeatures {
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
     public static final RegistryObject<PlacedFeature> SPHALERITE_ORE_PLACED = PLACED_FEATURES.register("sphalerite_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures. SPHALERITE_ORE_PLACED.getHolder().get(),
+            () -> new PlacedFeature(ModConfiguredFeatures.SPHALERITE_ORE_PLACED.getHolder().get(),
+                    commonOrePlacement(8, // VeinsPerChunk
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+
+    public static final RegistryObject<PlacedFeature> WOLFRAMITE_ORE_PLACED = PLACED_FEATURES.register("wolframite_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.WOLFRAMITE_ORE_PLACED.getHolder().get(),
                     commonOrePlacement(8, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 

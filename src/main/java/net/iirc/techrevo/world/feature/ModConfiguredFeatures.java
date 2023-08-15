@@ -28,22 +28,20 @@ public class ModConfiguredFeatures {
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BAUXITE_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_CHALCOPYRITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, CHALCOPYRITE_ORE.get().defaultBlockState())));
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_FLOURITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, FLOURITE_ORE.get().defaultBlockState())));
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_HEMATITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, HEMATITE_ORE.get().defaultBlockState())));
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_MAGNETITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MAGNETITE_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_MALECHITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, MALACHITE_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PYRITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, PYRITE_ORE.get().defaultBlockState())));
-
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_SPHALERITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, SPHALERITE_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_WOLFRAMITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, WOLFRAMITE_ORE.get().defaultBlockState())));
 
 
 
@@ -73,6 +71,8 @@ public class ModConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> SPHALERITE_ORE_PLACED = CONFIGURED_FEATURES.register("sphalerite_ore_placed",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SPHALERITE_ORE.get(), 9)));
 
+    public static final RegistryObject<ConfiguredFeature<?, ?>> WOLFRAMITE_ORE_PLACED = CONFIGURED_FEATURES.register("wolframite_ore_placed",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_WOLFRAMITE_ORE.get(), 9)));
 
 
 

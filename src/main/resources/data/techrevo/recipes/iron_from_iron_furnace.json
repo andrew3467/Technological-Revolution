@@ -1,0 +1,11 @@
+{
+  "type": "techrevo:iron_furnace_smelting",
+  "input": {
+    "item": "minecraft:raw_iron",
+    "count": 1
+    },
+  "output": {
+    "item": "minecraft:iron_ingot",
+    "count": 2
+  }
+}
