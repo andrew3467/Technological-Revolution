@@ -5,6 +5,7 @@ import net.iirc.techrevo.setup.ModSetup;
 import net.iirc.techrevo.setup.Registration;
 import net.iirc.techrevo.world.feature.ModConfiguredFeatures;
 import net.iirc.techrevo.world.feature.ModPlacedFeatures;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;

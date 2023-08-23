@@ -12,7 +12,6 @@ import net.iirc.techrevo.blocks.IronFurnace;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -39,12 +38,12 @@ public class Registration {
     public static final BlockBehaviour.Properties BLOCK_PROPERTIES = BlockBehaviour.Properties.of(Material.STONE).strength(2.0f);
 
 
+
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MODID);
     private static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MODID);
     private static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MODID);
-    private static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, MODID);
 
 
     public static final RegistryObject<Block> IRON_FURNACE = BLOCKS.register("iron_furnace", () -> new IronFurnace(BLOCK_PROPERTIES));
@@ -67,6 +66,7 @@ public class Registration {
 
 
 
+    //BLOCK ENTITIES
     public static final RegistryObject<BlockEntityType<IronFurnaceTile>> IRON_FURNACE_TILE = BLOCK_ENTITIES.register("iron_furnace", () ->
             BlockEntityType.Builder.of(IronFurnaceTile::new, IRON_FURNACE.get()).build(null));
 
@@ -75,16 +75,10 @@ public class Registration {
     public static final RegistryObject<MenuType<IronFurnaceMenu>> IRON_FURNACE_MENU = registerMenuType(IronFurnaceMenu::new, "iron_furnace_menu");
 
 
+
     //RECIPE SERIALIZERS
-    public static final RegistryObject<RecipeSerializer<IronFurnaceRecipe>> IRON_FURNACE_SERIALIZER =
-            RECIPE_SERIALIZERS.register("iron_furnace_smelting", () -> IronFurnaceRecipe.Serializer.INSTANCE);
-
-
-    //RECIPE TYPES
-    public static final RegistryObject<RecipeType<IronFurnaceRecipe>> IRON_FURNACE_TYPE =
-            RECIPE_TYPES.register("iron_furnace", () -> IronFurnaceRecipe.Type.INSTANCE);
-
-
+    public static final RegistryObject<RecipeSerializer<IronFurnaceRecipe>> IRON_FURNACE_SERIALIZER = RECIPE_SERIALIZERS.register(IronFurnaceRecipe.RECIPE_TYPE,
+            () -> IronFurnaceRecipe.Serializer.INSTANCE);
 
 
 
@@ -99,6 +93,7 @@ public class Registration {
         ITEMS.register(bus);
         BLOCK_ENTITIES.register(bus);
         MENUS.register(bus);
+        RECIPE_SERIALIZERS.register(bus);
     }
 
     @SubscribeEvent

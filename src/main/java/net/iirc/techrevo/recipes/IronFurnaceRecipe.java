@@ -2,56 +2,54 @@ package net.iirc.techrevo.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.iirc.techrevo.TechnologicalRevolution;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.Nullable;
 
-import static net.iirc.techrevo.TechnologicalRevolution.MODID;
-import static net.iirc.techrevo.setup.Registration.*;
-
-
 public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
-    public static final String ID = "iron_furnace_smelting";
+    public static final String RECIPE_TYPE = "iron_furnace_smelting";
 
-    public final ResourceLocation id;
-    private Ingredient input;
+
+    private static final int SLOT_COUNT = 2;
+    private static final int INPUT_SLOT = 0;
+    private static final int OUTPUT_SLOT = 1;
+
+
+    private final ResourceLocation ID;
     private final ItemStack output;
-    private int outputCount;
+    private final NonNullList<Ingredient> inputs;
 
 
-
-    public IronFurnaceRecipe(ResourceLocation id, ItemStack output, int outputCount, Ingredient input){
-        this.id = id;
+    public IronFurnaceRecipe(ResourceLocation ID, ItemStack output, NonNullList<Ingredient> inputs){
+        this.ID = ID;
         this.output = output;
-        this.outputCount = outputCount;
-        this.input = input;
+        this.inputs = inputs;
+
+        System.out.println(output);
     }
 
-    public Ingredient getInput(){
-        return input;
-    }
 
-    public int getOutputCount(){
-        return outputCount;
-    }
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        return !pLevel.isClientSide && this.input.test(pContainer.getItem(0));
+        return !pLevel.isClientSide && inputs.get(0).test(pContainer.getItem(INPUT_SLOT));
     }
 
     @Override
     public ItemStack assemble(SimpleContainer pContainer) {
-        return getResultItem();
+        return output;
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return inputs;
     }
 
     @Override
@@ -66,7 +64,7 @@ public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public ResourceLocation getId() {
-        return id;
+        return ID;
     }
 
     @Override
@@ -79,49 +77,51 @@ public class IronFurnaceRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-
-
-
-    public static class Type implements RecipeType<IronFurnaceRecipe> {
-
-        private Type() {
-
-        }
-
+    public static class Type implements RecipeType<IronFurnaceRecipe>{
         public static final Type INSTANCE = new Type();
-        @Override
-        public String toString() {
-            return IronFurnaceRecipe.ID;
-        }
+        public static final String ID = RECIPE_TYPE;
     }
 
-    public static class Serializer implements RecipeSerializer<IronFurnaceRecipe> {
+    public static class Serializer implements RecipeSerializer<IronFurnaceRecipe>{
         public static final Serializer INSTANCE = new Serializer();
-
-        public static final ResourceLocation ID =
-                new ResourceLocation(MODID, "iron_furnace_smelting");
+        public static final ResourceLocation ID = new ResourceLocation(TechnologicalRevolution.MODID, RECIPE_TYPE);
 
         @Override
         public IronFurnaceRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-            Ingredient input = Ingredient.fromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "input"));
 
-            return new IronFurnaceRecipe(pRecipeId, output, 2, input);
+            JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
+            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+
+            for (int i = 0; i < ingredients.size(); i++){
+                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+            }
+
+            return new IronFurnaceRecipe(pRecipeId, output, inputs);
         }
 
         @Override
-        public @Nullable IronFurnaceRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
-            ItemStack output = buf.readItem();
-            Ingredient input = Ingredient.fromNetwork(buf);
-            int count = buf.readInt();
-            return new IronFurnaceRecipe(id, output, count, input);
+        public @Nullable IronFurnaceRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+            NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
+
+            for (int i = 0; i < inputs.size(); i++){
+                inputs.set(i, Ingredient.fromNetwork(pBuffer));
+            }
+
+            ItemStack output = pBuffer.readItem();
+
+            return new IronFurnaceRecipe(pRecipeId, output, inputs);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, IronFurnaceRecipe recipe) {
-            buf.writeInt(recipe.getIngredients().size());
-            recipe.getInput().toNetwork(buf);
-            buf.writeInt(recipe.getOutputCount());
+        public void toNetwork(FriendlyByteBuf pBuffer, IronFurnaceRecipe pRecipe) {
+            pBuffer.writeInt(pRecipe.getIngredients().size());
+
+            for(Ingredient ing : pRecipe.getIngredients()){
+                ing.toNetwork(pBuffer);
+            }
+
+            pBuffer.writeItemStack(pRecipe.getResultItem(), false);
         }
     }
 }
